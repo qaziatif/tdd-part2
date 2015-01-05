@@ -3,6 +3,7 @@ import java.lang.reflect.Method;
 
 public class TestCase {
 	protected String methodName ;
+	TestResult result;
 
 	public TestCase(String methodName) {
 		this.methodName = methodName;
@@ -12,8 +13,7 @@ public class TestCase {
 		
 	}
 	
-	public TestResult run() throws Exception{
-		TestResult result= new TestResult();
+	public TestResult run(TestResult result) throws Exception{
 		result.testStarted();
 		this.setUp();
 		try{
