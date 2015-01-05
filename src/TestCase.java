@@ -13,9 +13,17 @@ public class TestCase {
 	}
 	
 	public void run() throws Exception{
-		setUp();
-		Method method = this.getClass().getMethod(methodName);
-		method.invoke(this);
+		this.setUp();
+		try{
+			Method method = this.getClass().getMethod(methodName);
+			method.invoke(this);
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+		tearDown();
+	}
+	public void tearDown(){
+		
 	}
 
 }

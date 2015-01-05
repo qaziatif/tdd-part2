@@ -1,23 +1,16 @@
 
 public class TestCaseTest extends TestCase {
 	
-	WasRun test ;
 	public TestCaseTest(String methodName) {
 		super(methodName);
 	}
 
-	public void testSetUp(){
-		test = new WasRun("testMethod");
-		test.run();
-		assert (test.wasSetUp);
-	}
-	public void testRunning(){
+	public void testTemplateMethod() throws Exception{
 		WasRun test = new WasRun("testMethod");
 		test.run();
-		assert (test.wasRun);
+		System.out.println(test.log);
+		assert("setUp testMethod tearDown ".equalsIgnoreCase(test.log));
 	}
 	
-	public void setUp(){
-		test = new WasRun("testMethod");
-	}
+	
 }

@@ -1,18 +1,20 @@
-
+	
 public class WasRun extends TestCase {
-	boolean wasRun;
-	boolean wasSetUp;
+	String log;
 
 	public WasRun(String methodName) {
 		super(methodName);
 	}
 
-	public void run() {
-		
+	public void setUp(){
+		log = "setUp ";
 	}
 	
-	public void setUp(){
-		wasRun = false;
-		wasSetUp=true;
+	public void testMethod(){
+		log += "testMethod ";
+	}
+	
+	public void tearDown(){
+		log += "tearDown ";
 	}
 }
